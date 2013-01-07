@@ -516,19 +516,14 @@ CREATE DEFINER=`root`@`` FUNCTION `fGetVehCount`() RETURNS smallint(3)
     READS SQL DATA
 BEGIN
 
-	DECLARE iVehCount	SMALLINT(3) DEFAULT 0;
+ DECLARE iVehCount SMALLINT(3) DEFAULT 0;
 
-	SELECT COUNT(*) 
-		INTO iVehCount
-		FROM object_data 
-		WHERE Classname != 'dummy'
-			AND Classname != 'TentStorage'  
-			AND Classname != 'Hedgehog_DZ'	
-			AND Classname != 'Wire_cat1'		
-			AND Classname != 'Sandbag1_DZ'	
-			AND Classname != 'TrapBear';		
+ SELECT COUNT(*) 
+  INTO iVehCount
+  FROM object_data, object_classes
+  WHERE object_data.Classname = object_classes.Classname;   
 
-	RETURN iVehCount;
+ RETURN iVehCount;
 END
 ;;
 DELIMITER ;
