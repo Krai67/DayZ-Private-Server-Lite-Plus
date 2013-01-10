@@ -9,6 +9,7 @@ class Mission
 		"dayz_weapons",
 		"dayz_equip",
 		"dayz_vehicles",
+		"dayz_extras",
 		"cacharacters_pmc",
 		"ca_modules_functions"
 	};
