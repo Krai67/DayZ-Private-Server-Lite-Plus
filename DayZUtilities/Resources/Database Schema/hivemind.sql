@@ -283,7 +283,7 @@ CREATE TABLE `player_login` (
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `pCleanup`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` PROCEDURE `pCleanup`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pCleanup`()
 BEGIN
 
  CALL pCleanupOOB();
@@ -320,7 +320,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `pCleanupOOB`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` PROCEDURE `pCleanupOOB`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pCleanupOOB`()
 BEGIN
  
     DECLARE intLineCount    INT DEFAULT 0;
@@ -383,7 +383,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `pFixMaxNum`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` PROCEDURE `pFixMaxNum`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pFixMaxNum`()
 BEGIN
 
 	DECLARE iCounter INT DEFAULT 0;
@@ -407,7 +407,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `pMain`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` PROCEDURE `pMain`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pMain`()
 BEGIN
 
 	DECLARE iSpawnNumVeh SMALLINT(3) DEFAULT 100;		
@@ -433,7 +433,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `pSpawn`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` PROCEDURE `pSpawn`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pSpawn`()
 BEGIN
     DECLARE bSpawned        TINYINT(1) DEFAULT 0;
     DECLARE iLID                INT DEFAULT 0;
@@ -470,7 +470,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `fGetClassCount`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` FUNCTION `fGetClassCount`(`clname` varchar(32)) RETURNS smallint(3)
+CREATE DEFINER=`root`@`localhost` FUNCTION `fGetClassCount`(`clname` varchar(32)) RETURNS smallint(3)
     READS SQL DATA
 BEGIN
 
@@ -491,7 +491,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `fGetSpawnFromChance`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` FUNCTION `fGetSpawnFromChance`(`chance` double) RETURNS tinyint(1)
+CREATE DEFINER=`root`@`localhost` FUNCTION `fGetSpawnFromChance`(`chance` double) RETURNS tinyint(1)
     NO SQL
 BEGIN
 
@@ -512,7 +512,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `fGetVehCount`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`` FUNCTION `fGetVehCount`() RETURNS smallint(3)
+CREATE DEFINER=`root`@`localhost` FUNCTION `fGetVehCount`() RETURNS smallint(3)
     READS SQL DATA
 BEGIN
 
